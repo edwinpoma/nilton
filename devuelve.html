@@ -1,0 +1,49 @@
+<html>
+<head><title>get</title>
+</head>
+<style type="text/css">
+#edwin{
+	padding:12px 15px 14px 15px;
+}
+body { font-family: Arial, Helvetica, sans-serif; }
+form { margin: 0; }
+#info { margin: 0; font-size: 40; color: #aa2808; background-color: #dddddd;  border-bottom-right-radius: 10px;border-bottom-left-radius: 10px;border-top-right-radius: 10px; }
+#clase{
+border-bottom: 1px solid #f00;
+}
+</style>
+<body>
+<button onclick="myFunction()">texto</button>
+<script>
+/*var texto="edwin";
+function myFunction(){
+document.getElementById("demo").innerHTML = "hello world"+"hola mundo";
+document.getElementById("sumo").innerHTML = "hola mundo";
+}*/
+window.onload = function(){ 
+  document.getElementById('mostrar').onclick = ivan; 
+}
+function ivan(){ 
+   var veo = document.getElementById('edwin').value; 
+  log(veo);
+ }
+ function log(mensaje){ //devuelve el texto en el html con el id info
+  document.getElementById('info').innerHTML += mensaje + "<br/>";
+  }
+</script>
+<center>
+<form action="">
+<table width="464" height="80" border="0">
+<tr>
+<td width="390" height="74"><input name="texto" type="text" id="edwin" size="60" maxlength="1000" placeholder= "Escribe tu Correo" /></td>
+<td width="100"><input type="button" name="enviar" value="enviar" id="mostrar"> <input type ="reset" value="limpiar" id="url"/></td>
+</tr></table></form>
+<div id="info"><div id="clase"></div></div>
+<div id="mostrar"></div>
+<div id="alo"></div>
+</center>
+
+<p id="demo"></p>
+<div id="sumo"></div>
+</body>
+</html>

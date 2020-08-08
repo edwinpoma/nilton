@@ -1,0 +1,107 @@
+<html>
+<head><title>ejerse</title></head>
+<style>
+body{
+font-family:arial;
+}
+.tab{
+border:1px solid #ccc;
+background-color:#f1f1f1;
+overflow:hidden;
+}
+.tab button{
+border:none;
+padding:14px 16px;
+background-color:inherit;
+outline:none;
+cursor:pointer;
+transition:0.3s;
+float:left;
+font-size:14px;
+}
+.tab button:hover{
+background-color:#ddd;
+}
+.tab button.active{
+background-color:#ccc;
+}
+.tabcontend{
+display:none;
+border-top:none;
+border:1px solid #ccc;
+padding:
+}
+#customer{
+font-family:arial;
+width:100%;
+border-collapse:collapse;
+}
+#customer td, #customer th{
+padding:8px;
+border:1px solid #ddd;
+}
+#customer tr:nth-child(even){
+background-color:#f2f2f2;
+}
+#customer th{
+background-color:#4caf50;
+}
+#andres{
+font-family:arial;
+width:50%;
+border-collapse:collapse;
+}
+#andres td, #andres th{
+padding:8px;
+border:1px solid #ccc;
+}
+#andres tr:nth-child(even){
+background-color:#f2f2f2;
+}
+#andres th{
+background-color:#3def60;
+}
+</style>
+<script>
+function opencity(evt,cityName){
+var i, tabcontend, tablinks;
+tabcontend=document.getElementsByClassName("tabcontend");
+for(i=0;i<tabcontend.length;i++){
+tabcontend[i].style.display="none";
+}
+tablinks=document.getElementsByClassName("tablinks");
+for(i=0;i<tablinks.length;i++){
+tablinks[i].className=tablinks[i].className.replace("active","");
+}
+document.getElementById(cityName).style.display="block";
+evt.currentTarget.className +="active";
+}
+</script>
+<body>
+<div class="tab">
+<button class="tablinks" onclick="opencity(event,'cronograma')">cronograma</button>
+<button class="tablinks" onclick="opencity(event,'lista')">lista</button>
+<button class="tablinks" onclick="opencity(event,'datos')">datos</button>
+</div>
+<div id="cronograma" class="tabcontend">
+<font face="arial" size="15">banco de datos</font>
+<table id="customer">
+<tr><th>lunes</th><th>martes</th><th>miercoles</th></tr>
+<tr><td>biologia</td><td>matematicas</td><td>geometria</td></tr>
+<tr><td>biologia</td><td>matematicas</td><td>geometria</td></tr>
+<tr><td>biologia</td><td>matematicas</td><td>geometria</td></tr>
+</table>
+</div>
+
+<div id="lista" class="tabcontend">
+<font face="arial" size="15">relacion</font>
+<table id="andres">
+<tr><th>lunes</th><th>martes</th><th>miercoles</th></tr>
+<tr><td>biologia</td><td>matematicas</td><td>geometria</td></tr>
+<tr><td>biologia</td><td>matematicas</td><td>geometria</td></tr>
+<tr><td>biologia</td><td>matematicas</td><td>geometria</td></tr>
+</table>
+</div>
+<div id="datos" class="tabcontend"><h3>miercoles</h3><p>tercer dia</p></div>
+</body>
+</html>
